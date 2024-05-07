@@ -2,6 +2,7 @@ html,body{
     height:100%;
     width: 100%;
 }
+
 .navbar {
     background-color:#d9eacd;
     height: 80px;
@@ -12,13 +13,13 @@ html,body{
 
 .navbar-brand{
     font-weight: 500;
-    color:#283f1a;
+    color:#014421;
     font-size: 24px;
     transition: 0.2s color;
 }
 
 .login-button{
-    background-color:#283f1a;
+    background-color:#013220;
     color: #FFF;
     font-size: 14px;
     padding: 8px 20px;
@@ -29,7 +30,7 @@ html,body{
 }
 
 .login-button:hover{
-    background-color: #283f1a;
+    background-color: #014421;
 }
 
 .navbar-toggler{
@@ -50,7 +51,7 @@ html,body{
 }
 
 .nav-link:hover, .nav-link.active{
-    color:#283f1a;
+    color:#014421;
 }
 
 @media(min-width:991px){
@@ -107,4 +108,82 @@ html,body{
 .hero-section h5{
     font-size: 1.2em;
     
+}
+
+#firstpadding{
+    padding-top:700px ;
+}
+.padding{
+    padding:80px 0;
+    background-color:#d9eacd;
+    h1{
+        color:#014421;
+    }
+}
+
+.padding img{
+    width:100%;
+}
+
+#fixed{
+    background: url(Resimler/226e599c-0aa6-468a-a3fb-6ded8ee175ea.png) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width:100%;
+    background-size: cover;
+
+    .container:before{
+        background-color: rgba(0,0,0,0.6);
+        content:"";
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left: 0;
+     }
+}
+
+#siir{
+    font-style: italic;
+    font-size: 140%;
+    font-weight: 500;
+    
+}
+
+footer{
+    width:100%;
+    background-color:#014421;
+    padding:5% 5% 10% 5%;
+    color:#FFF;
+}
+
+.fa{
+    padding:15px;
+    font-size: 25px;
+    color: #FFF;
+}
+
+.fa:hover{
+    color:#D5D5D5;
+    text-decoration: none;
+}
+
+.icon{
+    max-width:200px ;
+}
+
+@media (max-width: 768px){
+    .landing-text h1{
+        font-size: 300;
+    }
+    .fa{
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .icon{
+        padding-top:5%;
+        max-width:100px ;
+    }
 }
