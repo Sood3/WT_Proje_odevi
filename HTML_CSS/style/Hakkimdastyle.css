@@ -1,0 +1,128 @@
+html,body{
+    height:100%;
+    width: 100%;
+    background-color: #d9eacd;
+}
+
+.navbar {
+    background-color:#FFF;
+    height: 80px;
+    margin:20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+}
+
+.navbar-brand{
+    font-weight: 500;
+    color:#014421;
+    font-size: 24px;
+    transition: 0.2s color;
+}
+
+.login-button{
+    background-color:#013220;
+    color: #FFF;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+
+}
+
+.login-button:hover{
+    background-color: #014421;
+}
+
+.navbar-toggler{
+    border: none;
+    font-size:1.25rem;
+
+}
+.navbar-toggler:focus , .btn-close:focus{
+    box-shadow:none;
+    outline:none;
+
+}
+
+.nav-link{
+    color:#88bf66;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover, .nav-link.active{
+    color:#014421;
+}
+
+@media(min-width:991px){
+    .nav-link::before{
+        content:"";
+        position :absolute;
+        bottom:0;
+        left:50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color:#283f1a;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .nav-link:hover::before , .nav-link.nav-link.active::before{
+        width: 100%;
+        visibility: visible;
+    }
+
+}
+
+.padding .card{
+    background-color:#013220;
+    width:auto;
+    padding:10px;
+    
+}
+
+.padding .card-body p{
+    color:#FFF;
+}
+
+#firstpadding{
+    padding-top:700px ;
+}
+.padding{
+    padding:80px 0;
+    background-color:#d9eacd;
+    h1{
+        color:#014421;
+    }
+}
+
+#fixed{
+    background: url(Resimler.Hakkimda/backg4.png) no-repeat center center fixed;
+    display: table;
+    height: 60%;
+    position: relative;
+    width:100%;
+    background-size: cover;
+
+    .container:before{
+        background-color: rgba(0,0,0,0.6);
+        content:"";
+        position:absolute;
+        top:0;
+        right:0;
+        bottom:0;
+        left: 0;
+     }
+}
+
+#fixed h1{
+   
+    color:#FFF;
+    padding-top: 10%;
+}
+#fixed p{
+    color:#FFF;
+    font-size: larger;
+}

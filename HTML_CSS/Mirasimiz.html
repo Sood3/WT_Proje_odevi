@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
 
-    <link href="Mirasimizstyle.css" rel="stylesheet" />
+    <link href="style/Mirasimizstyle.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sakarya</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel" >Sakarya</h5>
             <button
               type="button"
               class="btn-close"
@@ -47,7 +47,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="Mirasimiz.html">Mirasımız</a>
+                <a class="nav-link active mx-lg-2 active" href="Mirasimiz.html">Mirasımız</a>
               </li>
               <li class="nav-item">
                 <a
@@ -59,7 +59,7 @@
               </li>
               <li class="nav-item">
                 <a
-                  class="nav-link active mx-lg-2 active"
+                  class="nav-link mx-lg-2 "
                   href="CV.html"
                   >Özgeçmiş</a
                 >
@@ -86,5 +86,159 @@
         </button>
       </div>
     </nav>
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div id="sayfabasi"class="carousel-inner">
+        <div class="carousel-item active">
+          <img  src="Resimler.Mirasimiz/acarlar1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption ">
+            <h5>Acarlar Longozu</h5>
+            <p>Sakarya'nın kuzeyinde Türkiye'nin tek parça halindeki en büyük longoz ormanı</p>
+            <p><a class="btn btn-success mt-3" onclick="DetayAcarlar()" >KEŞFET!</a></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img  src="Resimler.Mirasimiz/sapanca1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption ">
+            <h5>Sapanca Gölü</h5>
+            <p>Doğu Marmara Bölgesinde tektonik kökenli bir tatlı su gölü</p>
+            <p><a class="btn btn-success mt-3" onclick="DetaySapanca()" >KEŞFET!</a></p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img  src="Resimler.Mirasimiz/doğançay.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption ">
+            <h5>Doğançay Şelalesi</h5>
+            <p>Doğançay Deresi'nin serpintili sularıyla şekillenmiş, etkileyici bir doğal yapı</p>
+            <p><a class="btn btn-success mt-3" onclick="DetayDogancay()">KEŞFET!</a></p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <img id="detayacarlar" class="rounded-5" src="Resimler.Mirasimiz/acarlar2.webp" />
+          </div>
+          <div class="col-sm-6">
+           <p >Acarlar Longozu, Sakarya'nın önemli doğal güzelliklerinden biridir. Geniş sulak alanı ve zengin biyoçeşitliliğiyle ünlüdür. Longoz, yazın kururken kışın su altında kalır, böylece farklı mevsimlerde benzersiz bir manzara sunar. Yaz aylarında kuruyan topraklar, köylüler tarafından tarım arazisi olarak kullanılır. Ayrıca, buradaki zengin flora ve fauna çeşitliliği, doğa gözlemcileri için önemli bir cazibe merkezidir. Acarlar Longozu, koruma altına alınmış birinci derece doğal sit alanıdır ve yerel ekosistemin önemli bir parçasını oluşturur. </p>
+           <p>Acarlar Longozu'nda yapılacak birçok etkinlik bulunmaktadır. Doğa yürüyüşleri yapabilir, kuş gözlemi yapabilir veya botla gölde gezintiye çıkabilirsiniz. Ayrıca, bölgede kamp yapma imkanı da bulunmaktadır, böylece doğanın tadını çıkarmak isteyenler için harika bir fırsat sunar.</p>
+           <div class="alert alert-warning" role="alert">
+            Başka yerleri <a onclick="SayfaBasi()" class="alert-link">keşfetmeye </a>devam et!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p>Sapanca, Sakarya'nın bir ilçesi olup, Sapanca Gölü'nün sadece bir kıyısına ev sahipliği yapar. Dolayısıyla, Sakarya'da Uzunkum veya Serdivan gibi bölgelere giderseniz bile Sapanca Gölü'nü görebilirsiniz. Eski Türk kaynaklarında adı Ayan Gölü olarak geçer. Özellikle güneyden gelen sularla beslenen göl, fazla suyunu doğu ucundan Çark Suyu aracılığıyla Sakarya Nehri'ne boşaltır. Gölde her türlü tatlı su balığı avlanmaktadır. Göç yolunda olması ve birçok tür ve bireyin burada barınması ve üremesi, Uluslararası Öneme Sahip Sulak Alanlar listesine alınmasını gerektirmektedir.</p>
+            <p>Kristal berraklığındaki sularıyla ünlü olan bu göl, çevresindeki yeşil doğa ile birlikte huzurlu bir ortam sunar. Gölde yapılabilecek etkinlikler arasında tekne gezintileri, su sporları, piknik yapma ve doğa yürüyüşleri bulunmaktadır. Ayrıca, göl çevresindeki şirin köylerde yerel lezzetleri tadabilir ve yöresel el sanatlarını keşfedebilirsiniz. Sapanca Gölü, doğa ile iç içe bir kaçamak yapmak isteyen herkes için ideal bir destinasyondur.</p>
+            <div class="alert alert-warning" role="alert">
+            Başka yerleri <a onclick="SayfaBasi()" class="alert-link">keşfetmeye </a>devam et!
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <img id="detaysapanca" class="rounded-5" src="Resimler.Mirasimiz/sapancagolu2.jpeg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <img id="detaydogancay" class="rounded-5" src="Resimler.Mirasimiz/dogancay2.jpg" />
+          </div>
+          <div class="col-sm-6">
+           <p >Doğançay Şelalesi, Doğançay Deresi üzerinde yer alır ve serin sularıyla doğaseverleri cezbeder. Üç ardışık şelaleden oluşur ve toplamda 100 metreyi aşan bir yüksekliğe sahiptir. Ziyaretçilere muhteşem doğal manzaralar sunar ve çevresindeki yürüyüş parkurları, flora ve fauna keşfi için idealdir. Sakarya'nın doğal güzelliklerinden biri olan Doğançay Şelalesi, hem yerel halkın hem de ziyaretçilerin huzurlu ve dinlendirici bir doğa kaçamağı için ideal bir destinasyondur.</p>
+           <p> Şelalenin etrafında doğa yürüyüşleri yapabilir ve doğanın tadını çıkarabilirsiniz. Ayrıca, serin sularında yüzme veya piknik yapma imkanı da vardır. Doğançay Şelalesi çevresindeki kamp alanları, doğa ile iç içe bir konaklama deneyimi sunar. Doğaseverler için harika bir kaçış noktası olan Doğançay Şelalesi, dinlendirici ve keyifli bir gün geçirmek isteyen herkes için ideal bir destinasyondur.</p>
+           <div class="alert alert-warning" role="alert">
+            Başka yerleri <a onclick="SayfaBasi()" class="alert-link">keşfetmeye </a>devam et!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function SayfaBasi(){
+        var targetElement = document.getElementById('sayfabasi');
+        var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;//hedef ögenin yukarı kenarının sayfanın üstüne olan mesafesini hesaplar.
+        var offset = targetOffset - 100;
+        window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+        });
+      }
+
+      function DetayAcarlar(){
+        var targetElement = document.getElementById('detayacarlar');
+        var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;//hedef ögenin yukarı kenarının sayfanın üstüne olan mesafesini hesaplar.
+        var offset = targetOffset - 100;
+        window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+        });
+      }
+
+      function DetaySapanca(){
+        var targetElement = document.getElementById('detaysapanca');
+        var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;//hedef ögenin yukarı kenarının sayfanın üstüne olan mesafesini hesaplar.
+        var offset = targetOffset - 100;
+        window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+        });
+      }
+
+      function DetayDogancay(){
+        var targetElement = document.getElementById('detaydogancay');
+        var targetOffset = targetElement.getBoundingClientRect().top + window.pageYOffset;//hedef ögenin yukarı kenarının sayfanın üstüne olan mesafesini hesaplar.
+        var offset = targetOffset - 100;
+        window.scrollTo({
+        top: offset,
+        behavior: 'smooth'
+        });
+      }
+      
+    </script>
+
+
+
+    <!--Bootstrap JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+
 </body>
 </html>
