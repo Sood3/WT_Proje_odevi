@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Teknolojileri Projesi İletişim Sayfası</title>
+
+    <!--Bootstrap CSS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link href="style/Iletisimstyle.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand me-auto" href="AnaSayfa.html">Sakarya</a>
+
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sakarya</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="AnaSayfa.html">Şehrim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="Mirasimiz.html">Mirasımız</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-2"
+                  aria-current="page"
+                  href="Hakkimda.html"
+                  >Hakkımda</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="CV.html">Özgeçmiş</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="#">İlgi Alanlarım</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active mx-lg-2 active" href="Iletisim.html"
+                  >İletişim</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="login-button">Giriş Yap</a>
+        <button
+          class="navbar-toggler pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="controlform" class="container-form">
+      <form>
+        <h2>İletişim Formu</h2>
+        <div class="content">
+          <div class="input-box">
+            <label for="name">Ad Soyad</label>
+            <input
+              type="text"
+              v-model="name"
+              placeholder="Ad Soyad giriniz"
+              name="name"
+            />
+          </div>
+          <div class="input-box">
+            <label for="mail">E-posta</label>
+            <input
+              type="text"
+              v-model="mail"
+              placeholder="E-postanızı giriniz"
+              name="mail"
+            />
+          </div>
+          <div class="input-box">
+            <label for="short-content">Konu</label>
+            <input
+              type="text"
+              v-model="short-content"
+              placeholder="Kısaca Konuyu Açıklayınız"
+              name="short-content"
+            />
+          </div>
+          <div class="input-box">
+            <label for="explanation">İçerik</label>
+            <textarea
+              id="explanation"
+              v-model="explanation"
+              name="explanation"
+              rows="2"
+              cols="35"
+            ></textarea>
+          </div>
+          <span class="category-title">Cinsiyet</span>
+          <div class="category">
+            <input v-model="gender" type="radio" name="gender" id="male" />
+            <label for="gender">Erkek</label>
+            <input v-model="gender" type="radio" name="gender" id="female" />
+            <label for="gender">Kadın</label>
+          </div>
+          <span class="category-title">Alınan Dersler</span>
+          <div class="category">
+            <input
+              v-model="classes"
+              type="checkbox"
+              name="classes"
+              value="WT"
+            />
+            <label for="classes">Web Teknolojileri</label>
+            <input
+              v-model="classes"
+              type="checkbox"
+              name="classes"
+              value="NDP"
+            />
+            <label for="classes">Nesneye Dayalı Programlama</label>
+            <input
+              v-model="classes"
+              type="checkbox"
+              name="classes"
+              value="PG"
+            />
+            <label for="classes">Programlamaya Giriş</label>
+          </div>
+          <span class="category-title">Üniversite</span>
+          <div class="category">
+            <select id="universities" name="universities">
+              <option value="default" disabled selected>
+                Üniversite Seçiniz
+              </option>
+              <option v-model="school" value="SAU">Sakarya Üniversitesi</option>
+              <option v-model="school" value="SUBU">
+                Sakarya Uygulamalı Bilimler Üniversitesi
+              </option>
+              <option v-model="school" value="ITU">
+                İstanbul Teknik Üniversitesi
+              </option>
+              <option v-model="school" value="BAU">
+                Bahçeşehir Üniversitesi
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="button-container">
+          <button type="button">Gönder</button>
+        </div>
+        <div class="button-container">
+          <button @click="checkForm" type="button">
+            JS frameworkü ile gönder
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+
+      new Vue({
+        el: "#controlform",
+        data: {
+          name: "",
+          mail: "",
+          gender: "",
+          classes: [],
+          school: "",
+          explanation: "",
+          shortContent: "",
+        },
+        methods: {
+      checkForm() {
+        // Boş alanları kontrol et
+        if (!this.name.trim() || !this.mail.trim()) {
+          alert('Lütfen tüm alanları doldurun!');
+          return;
+        }
+
+        // Form gönderme işlemleri burada yapılabilir
+        console.log('Form gönderildi!');
+      }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!--Bootstrap JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
