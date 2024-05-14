@@ -12,6 +12,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!--Vue.js-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
     <link href="style/Iletisimstyle.css" rel="stylesheet" />
   </head>
@@ -80,7 +82,7 @@
     </nav>
 
     <div id="controlform" class="container-form">
-      <form>
+      <form action="phpdosyası.php" method="post">
         <h2>İletişim Formu</h2>
         <div class="content">
           <div class="input-box">
@@ -88,6 +90,7 @@
             <input
               type="text"
               v-model="name"
+              id="name"
               placeholder="Ad Soyad giriniz"
               name="name"
             />
@@ -95,17 +98,19 @@
           <div class="input-box">
             <label for="mail">E-posta</label>
             <input
-              type="text"
+              type="email"
               v-model="mail"
+              id="mail"
               placeholder="E-postanızı giriniz"
               name="mail"
             />
           </div>
           <div class="input-box">
-            <label for="short-content">Konu</label>
+            <label for="shortcontent">Konu</label>
             <input
               type="text"
-              v-model="short-content"
+              v-model="shortcontent"
+              id="shortcontent"
               placeholder="Kısaca Konuyu Açıklayınız"
               name="short-content"
             />
@@ -115,6 +120,7 @@
             <textarea
               id="explanation"
               v-model="explanation"
+              id="explanation"
               name="explanation"
               rows="2"
               cols="35"
@@ -122,92 +128,111 @@
           </div>
           <span class="category-title">Cinsiyet</span>
           <div class="category">
-            <input v-model="gender" type="radio" name="gender" id="male" />
+            <input v-model="gender" type="radio" name="gender" id="gender" />
             <label for="gender">Erkek</label>
-            <input v-model="gender" type="radio" name="gender" id="female" />
+            <input v-model="gender" type="radio" name="gender" id="gender" />
             <label for="gender">Kadın</label>
-          </div>
-          <span class="category-title">Alınan Dersler</span>
-          <div class="category">
-            <input
-              v-model="classes"
-              type="checkbox"
-              name="classes"
-              value="WT"
-            />
-            <label for="classes">Web Teknolojileri</label>
-            <input
-              v-model="classes"
-              type="checkbox"
-              name="classes"
-              value="NDP"
-            />
-            <label for="classes">Nesneye Dayalı Programlama</label>
-            <input
-              v-model="classes"
-              type="checkbox"
-              name="classes"
-              value="PG"
-            />
-            <label for="classes">Programlamaya Giriş</label>
           </div>
           <span class="category-title">Üniversite</span>
           <div class="category">
-            <select id="universities" name="universities">
+            <select v-model="school" id="school" name="school">
               <option value="default" disabled selected>
                 Üniversite Seçiniz
               </option>
-              <option v-model="school" value="SAU">Sakarya Üniversitesi</option>
-              <option v-model="school" value="SUBU">
+              <option value="SAU">Sakarya Üniversitesi</option>
+              <option value="SUBU">
                 Sakarya Uygulamalı Bilimler Üniversitesi
               </option>
-              <option v-model="school" value="ITU">
-                İstanbul Teknik Üniversitesi
-              </option>
-              <option v-model="school" value="BAU">
-                Bahçeşehir Üniversitesi
-              </option>
+              <option value="ITU">İstanbul Teknik Üniversitesi</option>
+              <option value="BAU">Bahçeşehir Üniversitesi</option>
             </select>
           </div>
         </div>
         <div class="button-container">
-          <button type="button">Gönder</button>
+          <button @click="clearForm" type="button">Temizle</button>
         </div>
         <div class="button-container">
-          <button @click="checkForm" type="button">
+          <button onclick="checkForm()" type="submit">JS ile gönder</button>
+        </div>
+        <div class="button-container">
+          <button @click="submitForm" type="submit">
             JS frameworkü ile gönder
           </button>
         </div>
       </form>
+      <p v-if="showMessage">{{ message }}</p>
     </div>
 
     <script>
+      function checkForm() {
+        const nameValue = document.getElementById("name").value;
+        const mailValue = document.getElementById("mail").value;
+        const schoolValue = document.getElementById("school").value;
+        const shortcontentValue = document.getElementById("shortcontent").value;
+        const explanationValue = document.getElementById("explanation").value;
+        const genderValue = document.getElementById("gender").value;
 
+        if (
+          !nameValue ||
+          !mailValue ||
+          !schoolValue ||
+          !shortcontentValue ||
+          !explanationValue ||
+          !genderValue
+        ) {
+          alert("Lütfen tüm alanları doldurun.");
+          event.preventDefault();
+        } else {
+          console.log("Form başarıyla gönderildi.");
+        }
+      }
+    </script>
+
+    <script>
       new Vue({
         el: "#controlform",
         data: {
           name: "",
           mail: "",
-          gender: "",
-          classes: [],
           school: "",
+          shortcontent: "",
           explanation: "",
-          shortContent: "",
+          gender:"",
+          showMessage: false,
+          message: "",
         },
         methods: {
-      checkForm() {
-        // Boş alanları kontrol et
-        if (!this.name.trim() || !this.mail.trim()) {
-          alert('Lütfen tüm alanları doldurun!');
-          return;
-        }
+          submitForm() {
+            if (
+              !this.name ||
+              !this.mail ||
+              !this.school ||
+              !this.shortcontent ||
+              !this.explanation ||
+              !this.gender
+            ) {
+              this.showMessage = true;
+              this.message = "Lütfen tüm alanları doldurun.";
+              alert("Lütfen tüm alanları doldurun.");
+              event.preventDefault();
+            } else {
+              this.showMessage = false;
+              this.message = "";
+            }
+          },
 
-        // Form gönderme işlemleri burada yapılabilir
-        console.log('Form gönderildi!');
-      }
+          clearForm() {
+            this.name = '';
+            this.mail = '';
+            this.shortcontent = '';
+            this.explanation = '';
+            this.gender = '';
+            this.school = '';
+          }
+        }
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
     <!--Bootstrap JS-->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

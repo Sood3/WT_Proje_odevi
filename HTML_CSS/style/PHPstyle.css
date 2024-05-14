@@ -1,0 +1,44 @@
+html,body{
+    background:url(Resimler.PHP/backg9.png) no-repeat center;
+    background-size: cover;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.box h2{
+    text-align: center;
+    color: #014421;
+
+}
+.box p{
+    font-size: larger;
+    margin-left: 170px;
+    color: #014421;
+    
+}
+
+.button-container button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    background-image: linear-gradient(to right,#013220, #d9eacd);
+}
+.button-container button:hover{
+    background-image: linear-gradient(to right, #d9eacd,#013220);
+}
