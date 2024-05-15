@@ -1,9 +1,9 @@
 html,body{
-    background:url(Resimler.Iletisim/backg8.png) no-repeat center;
+    background:url('Resimler.Iletisim/backg8.png') no-repeat center;
     background-size: cover;
 }
 
-
+/*styling of navbar*/
 .navbar {
     background-color:#FFF;
     height: 80px;
@@ -74,7 +74,9 @@ html,body{
         visibility: visible;
     }
 }
+/*end of styling of navbar*/
 
+/*styling of form page's*/
 .container-form{
     
     max-width: 650px;

@@ -5,6 +5,7 @@ html,body{
     
 }
 
+/*styling navbar*/
 .navbar {
     background-color:#d9eacd;
     height: 80px;
@@ -76,7 +77,9 @@ html,body{
     }
 
 }
+/*end of stying navbar*/
 
+/*styling hero section*/
 .hero-section{
     background:url(Resimler/sapanca-golu.jpg) no-repeat center;
     background-size: cover;
@@ -112,6 +115,7 @@ html,body{
     
 }
 
+/*styling the first section of infos' */
 #firstpadding{
     padding-top:700px ;
 }
@@ -126,8 +130,6 @@ html,body{
 .padding img{
     width:100%;
 }
-
-
 
 #fixed{
     background: url(Resimler/226e599c-0aa6-468a-a3fb-6ded8ee175ea.png) no-repeat center center fixed;

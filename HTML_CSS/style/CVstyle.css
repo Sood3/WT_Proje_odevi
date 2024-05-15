@@ -4,6 +4,7 @@ html,body{
     height: 100%;
 }
 
+/*styling of navbar*/
 .navbar {
     background-color:#FFF;
     height: 80px;
@@ -75,6 +76,9 @@ html,body{
     }
 
 }
+/*end of styling navbar*/
+
+/*CV page's style*/
 section {
    padding-top: 4vh;
    height: 96vh;

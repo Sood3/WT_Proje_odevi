@@ -2,6 +2,8 @@ html,body{
     background:url(Resimler.PHP/backg9.png) no-repeat center;
     background-size: cover;
 }
+
+/*styling the page of php returns and button*/
 .container {
     display: flex;
     justify-content: center;
@@ -27,6 +29,10 @@ html,body{
     color: #014421;
     
 }
+.box h3{
+    text-align: center;
+    color: #014421;
+}
 
 .button-container button{
     width: 100%;
@@ -42,3 +48,6 @@ html,body{
 .button-container button:hover{
     background-image: linear-gradient(to right, #d9eacd,#013220);
 }
+
+
+

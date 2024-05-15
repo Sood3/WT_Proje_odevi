@@ -12,22 +12,29 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
     <!--Vue.js-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
+    <!--css link-->
     <link href="style/Iletisimstyle.css" rel="stylesheet" />
   </head>
+
   <body>
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
+        <!--navbar items-->
         <a class="navbar-brand me-auto" href="AnaSayfa.html">Sakarya</a>
 
+        <!--header item-->
         <div
           class="offcanvas offcanvas-end"
           tabindex="-1"
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
+        <!--other items-->
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sakarya</h5>
             <button
@@ -57,17 +64,21 @@
                 <a class="nav-link mx-lg-2" href="CV.html">Özgeçmiş</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="#">İlgi Alanlarım</a>
+                <a class="nav-link mx-lg-2" href="API.html">İlgi Alanlarım</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active mx-lg-2 active" href="Iletisim.html"
+                <a class="nav-link active mx-lg-2 active" aria-current="page" href="Iletisim.html"
                   >İletişim</a
                 >
               </li>
             </ul>
           </div>
         </div>
-        <a href="#" class="login-button">Giriş Yap</a>
+
+        <!--login button-->
+        <a href="Girisyap.html" class="login-button">Giriş Yap</a>
+
+        <!--button for responsive page -->
         <button
           class="navbar-toggler pe-0"
           type="button"
@@ -80,9 +91,11 @@
         </button>
       </div>
     </nav>
+    <!--End of navbar-->
 
-    <div id="controlform" class="container-form">
-      <form action="phpdosyası.php" method="post">
+    <!--Form-->
+    <div id="controlform" class="container-form" >
+      <form action="phpdosyası.php" method="post" >
         <h2>İletişim Formu</h2>
         <div class="content">
           <div class="input-box">
@@ -162,7 +175,9 @@
       </form>
       <p v-if="showMessage">{{ message }}</p>
     </div>
+    <!--end of form-->
 
+    <!--js for checking form whether the items are filled-->
     <script>
       function checkForm() {
         const nameValue = document.getElementById("name").value;
@@ -186,8 +201,9 @@
           console.log("Form başarıyla gönderildi.");
         }
       }
-    </script>
+    </script> 
 
+    <!--vue.js framework for checking form whether the items are filled-->
     <script>
       new Vue({
         el: "#controlform",
@@ -204,12 +220,12 @@
         methods: {
           submitForm() {
             if (
-              !this.name ||
-              !this.mail ||
-              !this.school ||
-              !this.shortcontent ||
-              !this.explanation ||
-              !this.gender
+              this.name.length === 0 ||
+              this.mail.length === 0 ||
+              this.school.length === 0 ||
+              this.shortcontent.length === 0 ||
+              this.explanation.length === 0 ||
+              this.gender.length === 0
             ) {
               this.showMessage = true;
               this.message = "Lütfen tüm alanları doldurun.";
@@ -220,6 +236,7 @@
               this.message = "";
             }
           },
+          
 
           clearForm() {
             this.name = '';
@@ -249,5 +266,6 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    
   </body>
 </html>

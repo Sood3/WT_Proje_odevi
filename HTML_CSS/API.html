@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Teknolojileri Projesi Özgeçmiş Sayfası</title>
+    <title>Web Teknolojileri Projesi İlgi Alanlarım Sayfası</title>
 
     <!--Bootstrap CSS-->
     <link
@@ -14,10 +14,10 @@
     />
 
     <!--css link-->
-    <link href="style/CVstyle.css" rel="stylesheet" />
+    <link href="style/APIstyle.css" rel="stylesheet" />
 
   </head>
-
+  
   <body>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -32,7 +32,7 @@
           id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel"
         >
-        <!--header item-->
+            <!--header item-->
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sakarya</h5>
             <button
@@ -46,11 +46,7 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a
-                  class="nav-link mx-lg-2"
-                  href="AnaSayfa.html"
-                  >Şehrim</a
-                >
+                <a class="nav-link mx-lg-2" href="AnaSayfa.html">Şehrim</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2" href="Mirasimiz.html">Mirasımız</a>
@@ -64,21 +60,22 @@
                 >
               </li>
               <li class="nav-item">
+                <a class="nav-link mx-lg-2" href="CV.html">Özgeçmiş</a>
+              </li>
+              <li class="nav-item">
                 <a
                   class="nav-link active mx-lg-2 active"
                   aria-current="page"
-                  href="CV.html"
-                  >Özgeçmiş</a
+                  href="API.html"
+                  >İlgi Alanlarım</a
                 >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link mx-lg-2" href="API.html">İlgi Alanlarım</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link mx-lg-2" href="Iletisim.html">İletişim</a>
               </li>
             </ul>
           </div>
+
         </div>
 
         <!--login button-->
@@ -95,60 +92,42 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
       </div>
     </nav>
     <!--End of navbar-->
 
-    
-    <main class="main-container">
+    <!--Searching menu-->
+    <h1>Unsplash Resim Aratma</h1>
+    <input type="text" id="searchInput" placeholder="Resim aratın...">
+    <button onclick="searchImages()">Ara</button>
+    <div id="gallery"></div>
+    <!--Searching menu end-->
 
-      <!--top section of the CV page-->
-      <section class="top-section">
-        <img src="Resimler.CV/Tarama_20230827 (2).jpg" class="profile">
-        <p class="p1">SUDE <span> ANDURMAN</span></p>
-        <p class="p2">Sakarya Üniversitesi Bilgisayar Mühendisliği 1.Sınıf Öğrencisi</p>
-      </section>
+    <!--codes for API-->
+    <script>
+        function searchImages() {
+            const query = document.getElementById('searchInput').value;
+            const apiKey = '02sRxP9vABgOgM25aPJIGKG2oIyMbz64IXqBcaUu16A';
+            const url = `https://api.unsplash.com/search/photos?query=${query}&client_id=${apiKey}`;
 
-      <!--main section of the CV page-->
-      <div class="main">
-        
-        <aside class="left">
-          <article class="CV">
-            <h2>Kişisel Bilgiler</h2>
-            <p><strong>Ad Soyad:</strong>Sude Andurman</p>
-            <p><strong>Doğum Tarihi:</strong>01/02/2005</p>
-            <p><strong>Vatandaşlık:</strong>T.C.</p>
-            <p><strong>Cinsiyet:</strong>Kadın</p>
-            <p><strong>Mail:</strong>sude_andurman@gmail.com</p>
-            <p><strong>Telefon Numarası:</strong>+90 100 123 3210</p>
-            <h2>Yetenekler</h2>
-            <ul>
-              <li>html/css</li>
-              <li>c++</li>
-              <li>c#</li>
-            </ul>
-            <h2>Eğitim</h2>
-            <h3>Lisans</h3>
-            <p>Sakarya Üniversitesi Bilgisayar Mühendisliği 2023-2027</p>
-            <h3>Lise</h3>
-            <p>Sakarya Anadolu Lisesi 2019-2023</p>
-          </article>
-        </aside>
+            fetch(url) //Bu satır, belirtilen URL'ye bir HTTP isteği gönderir ve API'den veri alır.
+                .then(response => response.json())//gelen yanıtın JSON formatında olduğunu belirtir. response.json() metodu, HTTP yanıtını JSON formatına dönüştürür.
+                .then(data => {//JSON'a dönüştürülmüş verilerle işlem yapmak için bir fonksiyonu belirtir. data parametresi, JSON formatına dönüştürülmüş veriyi temsil eder.
+                    const gallery = document.getElementById('gallery');
+                    gallery.innerHTML = '';
+                    data.results.forEach(photo => {//API'den gelen sonuçlarda döngü yapar. Her döngüde, sonuçlardaki her bir fotoğraf için bir işlem yapılır.
+                        const imageElement = document.createElement('div');//her fotoğraf için bir div elementi oluşturur. Bu element, her bir fotoğrafın içinde bulunacaktır.
+                        imageElement.className = 'image';//oluşturulan div elementine "image" sınıfını ekler.
+                        imageElement.innerHTML = `<img src="${photo.urls.small}" alt="${photo.alt_description}">`;//Bu satır, oluşturulan div elementinin içeriğini belirler. Her fotoğraf için bir img elementi oluşturulur ve src özelliği API'den gelen küçük boyuttaki resmin URL'sini, alt özelliği ise fotoğrafın alternatif metnini temsil eder.
+                        gallery.appendChild(imageElement);//oluşturulan div elementini galeriye ekler. Her bir fotoğraf, galerinin içindeki bir div elementi içinde gösterilecektir.
+                    });
+                })
+                .catch(error => console.error('Error:', error));//olası bir hata durumunda bir hata mesajı yazdırır. 
+        }
+    </script>
+    <!--end of API codes-->
 
-        <aside class="right">
-          <article class="CV">
-            <h2>İş Deneyimi</h2>
-            <h3>ABC TECH</h3>
-            <p><strong>Pozisyon:</strong>Software developer</p>
-            <p><strong>Çalıştığı Süre:</strong>2027-2030</p>
-            <br>
-            <h2>Dil Becerileri</h2>
-            <p><strong>Ana Dil(ler):</strong>Türkçe</p>
-            <p><strong>Diğer Dil(ler):</strong>İngilizce (C1), Korece (A2)</p>
-          </article>
-        </aside>
-      </section>
-    </main>
 
     <!--Bootstrap JS-->
     <script
@@ -166,5 +145,6 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <!--end of Bootstrap JS-->
   </body>
 </html>

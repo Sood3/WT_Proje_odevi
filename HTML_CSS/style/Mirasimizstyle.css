@@ -4,6 +4,7 @@ html,body{
     height: 100%;
 }
 
+/*styling of navbar*/
 .navbar {
     background-color:#FFF;
     height: 80px;
@@ -75,7 +76,9 @@ html,body{
     }
 
 }
+/*end of stying navbar*/
 
+/*styling carousel*/
 .carousel-item{
     height: 100vh;
     min-height: 300px;
@@ -142,6 +145,9 @@ html,body{
     }
 }
 
+/*end of stying carousel*/
+
+/*styling of infos' */
 .padding img{
     margin-top: 30px;
     margin-bottom: 30px;

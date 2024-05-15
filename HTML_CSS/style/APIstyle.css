@@ -1,10 +1,12 @@
-html,body{
-    height:100%;
-    width: 100%;
+body {
+    text-align: center;
+    height: 100vh;
+    margin: 0;
     background-color: #d9eacd;
+    
 }
 
-/*styling of navbar*/
+/*style of navbar*/
 .navbar {
     background-color:#FFF;
     height: 80px;
@@ -76,56 +78,63 @@ html,body{
     }
 
 }
-/*end of styling navbar*/
 
-/*styling of cards and introduction section*/
-.padding .card{
-    background-color:#013220;
-    width:auto;
-    padding:10px;
-    
-}
+/*end of style of navbar*/
 
-.padding .card-body p{
-    color:#FFF;
+
+/*styling API's gallery*/
+
+h1 {
+    color:#014421;
+    padding-top: 50px;
+    margin-bottom: 20px;
 }
 
-#firstpadding{
-    padding-top:700px ;
-}
-.padding{
-    padding:80px 0;
-    background-color:#d9eacd;
-    h1{
-        color:#014421;
-    }
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #013220;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
 }
 
-#fixed{
-    background: url(Resimler.Hakkimda/backg4.png) no-repeat center center fixed;
-    display: table;
-    height: 60%;
-    position: relative;
-    width:100%;
-    background-size: cover;
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #014421;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
 
-    .container:before{
-        background-color: rgba(0,0,0,0.6);
-        content:"";
-        position:absolute;
-        top:0;
-        right:0;
-        bottom:0;
-        left: 0;
-     }
 }
 
-#fixed h1{
-   
-    color:#FFF;
-    padding-top: 10%;
+button:hover {
+    background-color: #88bf66;
 }
-#fixed p{
-    color:#FFF;
-    font-size: larger;
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));/*her sütun en az 200 piksel genişliğinde olacak ve kullanılabilir alanı dolduracak kadar sütun oluşturulacaktır.*/
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
 }
+
+.image {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/*end of styling API's gallery*/
