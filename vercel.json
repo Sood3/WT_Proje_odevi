@@ -1,7 +1,10 @@
 {
   "version": 2,
-  "routes": [
-    { "src": "/(.*)",  "dest": "phpdosyası.php" },
-    { "src": "/(.*)",  "dest": "phpkontroldosyasi.php" }
-  ]
+  "functions": {
+    "api/phpkontroldosyasi.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "api/phpdosyası.php": {
+      "runtime": "vercel-php@0.6.0"}
+  }
 }
