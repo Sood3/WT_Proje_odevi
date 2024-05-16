@@ -6,7 +6,7 @@
     <title>Web Teknolojileri Proje Ödevi PHP sayfası</title>
 
     <!--css link-->
-    <link href="style/PHPstyle.css" rel="stylesheet" />
+    <link href="/style/PHPstyle.css" rel="stylesheet" />
 
 </head>
 
@@ -40,7 +40,7 @@
     <!--to return main page after succesfull process with js-->
     <script>
         function Return(){
-            window.location.href="AnaSayfa.html"
+            window.location.href="/AnaSayfa.html"
         }
 
     </script>
