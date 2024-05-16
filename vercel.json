@@ -1,11 +1,11 @@
 {
     "functions": {
-      "./*.php": {
+      "api/*.php": {
         "runtime": "vercel-php@0.6.0"
       }
     },
     "routes": [
-      { "src": "/(.*)",  "dest": "phpdosyası.php" },
-      { "src": "/(.*)",  "dest": "phpkontroldosyasi.php" }
+      { "src": "/(.*)",  "dest": "api/phpdosyası.php" },
+      { "src": "/(.*)",  "dest": "api/phpkontroldosyasi.php" }
     ]
   }
