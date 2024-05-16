@@ -40,7 +40,7 @@
     <!--to return main page after succesfull process with js-->
     <script>
         function Return(){
-            window.location.href="/AnaSayfa.html"
+            window.location.href=/AnaSayfa.html
         }
 
     </script>
