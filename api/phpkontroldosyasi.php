@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!--arranging buttons according to result-->
             <div class="button-container">
             <?php if ($show_success_button): ?>
-                <a href=“/../AnaSayfa.html"><button type="button">Ana Sayfaya Dön</button></a>
+                <a href="/../AnaSayfa.html"><button type="button">Ana Sayfaya Dön</button></a>
             <?php endif; ?>
 
             <?php if ($show_error_button): ?>
