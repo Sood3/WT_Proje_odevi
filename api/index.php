@@ -1,1 +1,1 @@
-<?php include _DIR_ . '/../phpdosyası.php'; include _DIR_ . '/../phpkontroldosyasi.php'; ?>
+<?php ?>
