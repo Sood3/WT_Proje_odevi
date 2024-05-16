@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>PHP kontrol ve başarısız giriş sayfası</title>
 
     <!--css link-->
-    <link href="style/PHPstyle.css" rel="stylesheet" />
+    <link href="/style/PHPstyle.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -52,11 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!--arranging buttons according to result-->
             <div class="button-container">
             <?php if ($show_success_button): ?>
-                <a href="AnaSayfa.html"><button type="button">Ana Sayfaya Dön</button></a>
+                <a href=“/AnaSayfa.html"><button type="button">Ana Sayfaya Dön</button></a>
             <?php endif; ?>
 
             <?php if ($show_error_button): ?>
-                <a href="Girisyap.html"><button type="button">Giriş Yap Sayfasına Dön</button></a>
+                <a href="/Girisyap.html"><button type="button">Giriş Yap Sayfasına Dön</button></a>
             <?php endif; ?>
             </div>
         </div> 
